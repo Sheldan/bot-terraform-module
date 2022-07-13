@@ -10,7 +10,7 @@ variable "project_name" {
   type        = string
 }
 
-variable "bot_name" {
+variable "user_name" {
   type        = string
   default     = "bot"
 }

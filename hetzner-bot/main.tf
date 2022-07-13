@@ -4,7 +4,7 @@ resource "hcloud_server" "bot_server" {
   server_type           = var.server_type
   location              = var.location
   user_data             = templatefile("${path.module}/resources/user-data.yaml", {
-    user_name           = var.bot_name,
+    user_name           = var.user_name,
     ssh_key             = data.hcloud_ssh_key.access-key.public_key
   })
   labels = {
