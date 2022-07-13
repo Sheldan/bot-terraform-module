@@ -1,57 +1,57 @@
 variable "hcloud_token" {
-  sensitive = true
+  sensitive   = true
 }
 
 variable "ssh_key_key" {
-  type = string
+  type        = string
 }
 
 variable "project_name" {
-  type = string
+  type        = string
 }
 
 variable "bot_name" {
-  type = string
-  default = "bot"
+  type        = string
+  default     = "bot"
 }
 
 variable "location" {
-  default = "nbg1"
-  type = string
+  default     = "nbg1"
+  type        = string
 }
 
 variable "server_type" {
-  default = "cpx11"
-  type = string
+  default     = "cpx11"
+  type        = string
 }
 
 variable "os_type" {
-  default = "ubuntu-20.04"
-  type = string
+  default     = "ubuntu-20.04"
+  type        = string
 }
 
 variable "disk_size" {
-  default = "10"
-  type = string
+  default     = "10"
+  type        = string
 }
 
 variable "ip_range" {
-  default = "10.0.1.0/24"
-  type = string
+  default     = "10.0.1.0/24"
+  type        = string
 }
 
 variable "network_name" {
-  type = string
-  default = "bot-network"
+  type        = string
+  default     = "bot-network"
 }
 
 variable "network_zone" {
-  type = string
-  default = "eu-central"
+  type        = string
+  default     = "eu-central"
 }
 
 variable "network_type" {
-  type = string
-  default = "cloud"
+  type        = string
+  default     = "cloud"
 }
 
