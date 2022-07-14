@@ -10,6 +10,32 @@ resource "hcloud_server" "bot_server" {
   labels = {
     Name                = "bot-instance-${var.project_name}"
   }
+  firewall_ids = [
+    hcloud_firewall.bot_server_firewall.id
+  ]
+}
+
+resource "hcloud_firewall" "bot_server_firewall" {
+  name = "bot-server-firewall-${var.project_name}"
+  rule {
+    direction = "in"
+    protocol  = "icmp"
+    source_ips = [
+      "0.0.0.0/0",
+      "::/0"
+    ]
+  }
+
+  rule {
+    direction = "in"
+    protocol  = "tcp"
+    port      = "22"
+    source_ips = [
+      "0.0.0.0/0",
+      "::/0"
+    ]
+  }
+
 }
 
 resource "hcloud_volume" "bot_volume" {
